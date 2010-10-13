@@ -3,24 +3,39 @@
 #include"FileNameTools.h"
 int GetDir(char *whole,char* dir)
 { 
-    int i,j;
-    memset(dir,0,sizeof(dir));
-    for(i=strlen(whole);1<=i;i--)
-      if(whole[i]=='\\')break;
-    for(j=0;j<i;j++)
-      dir[j]=whole[j];
-    return 0;
+   char *index;
+   int len;                                    //´¢´æ³¤¶È
+   index=strrchr(whole,'/');             
+   len=index-whole;
+   strncpy(dir,whole,len);
+   dir[len]='\0';
+   return len;
 }
 
 
 
 int GetName(char *whole,char* Name)
 {
-    return 0;
+    int len;                               
+    char *rname,*lname;                //name×Ö·û´®µÄ×ó±ßºÍÓÒ±ß
+    lname=strrchr(whole,'/');
+    lname++;
+    rname=strrchr(whole,'.');
+    len=rname-lname;
+    strncpy(Name,lname,len);
+    Name[len]='\0';
+    return len;
 }
 
 
 int GetExt(char *whole,char* Ext)
 {
-    return 0;
+   char *index;
+   int len;
+   index=strrchr(whole,'.');
+   index++;
+   len=strlen(whole)-strlen(index);
+   strncpy(Ext,index,len);
+   Ext[len]='\0';
+   return len;
 }
