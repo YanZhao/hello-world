@@ -31,3 +31,5 @@ int GetName(char *whole,char* name);
     文件名后缀结果的长度，例如，本例中为3。
 */
 int GetExt(char *whole,char* ext);
+
+void TestFileNameTools(void);
