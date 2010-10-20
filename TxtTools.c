@@ -53,7 +53,7 @@ unsigned int CountEnglishWords(char *FileName)
 
 void TestTxtTools(void)
 {
-	char FileName [] = "E:\\wangzheng.txt";
+	char FileName [] = "test.txt";
 	unsigned int numLines;
 	unsigned int numWords;
 	numLines = CountLines(FileName);
